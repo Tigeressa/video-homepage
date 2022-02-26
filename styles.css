@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Baloo+2:wght@600&display=swap");
+
+:root {
+  --soft-black: rgba(0, 0, 0, 0.5);
+  --orange-red: rgba(255, 69, 0, 0.8);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  transition: 1s;
+}
+
+.container.active {
+  right: 30rem;
+}
+
+/*-- Fonts --*/
+header .logo, .text-div p, .text-div a, .menu ul li a {
+    font-family: "Baloo 2", cursive;
+}
+
+.text-div h2 {
+  font-family: "Abril Fatface", cursive;
+}
+
+/*-- Header section --*/
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 10rem;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .toggle {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  background: url("image/toggle-menu.png") no-repeat;
+  background-size: 3rem;
+  background-position: center;
+  cursor: pointer;
+}
+
+header .toggle.active {
+  background: url("image/toggle-close.png") no-repeat;
+  background-size: 3rem;
+  background-position: center;
+}
+
+header .logo {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: var(--soft-black);
+}
+
+/*-- Video section --*/
+.container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e2d5d5;
+  mix-blend-mode: color-burn;
+}
+
+/*-- Text section --*/
+.text-div {
+  position: relative;
+}
+
+.text-div h2 {
+  font-size: 8rem;
+  color: var(--soft-black);
+  line-height: 8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  max-width: 90rem;
+}
+
+.text-div span {
+  color: var(--orange-red);
+}
+
+.text-div p {
+  margin: 2rem 0;
+  font-size: 3rem;
+  max-width: 70rem;
+  opacity: 0.8;
+}
+
+.text-div a {
+  display: inline-block;
+  font-size: 1.25rem;
+  background-color: var(--orange-red);
+  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  transition: 1s;
+}
+
+.text-div a:hover {
+  opacity: 0.5;
+}
+
+/*-- Social section --*/
+.social {
+  position: absolute;
+  bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li a {
+  display: inline-block;
+  font-size: 2rem;
+  color: var(--orange-red);
+  margin-right: 2rem;
+  transition: 0.5s;
+}
+
+.social li a:hover {
+  transform: translateY(-1rem);
+}
+
+/*-- Menu section --*/
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul {
+  position: relative;
+  list-style: none;
+}
+
+.menu ul li a {
+  font-size: 3.5rem;
+  text-decoration: none;
+  color: var(--orange-red);
+}
+
+.menu ul li a:hover {
+  opacity: 0.5;
+}
+
+/*-- Media queries --*/
+@media (max-width: 1090px) {
+  .text-div h2 {
+    font-size: 4.5rem;
+    line-height: 5rem;
+    max-width: 55rem;
+  }
+
+  .text-div p {
+    font-size: 2rem;
+    max-width: 50rem;
+  }
+
+  .text-div a {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    letter-spacing: 3px;
+    transition: 1s;
+  }
+}
+
+@media (max-width: 529px) {
+  .container {
+    padding: 4rem;
+  }
+
+  header {
+    padding: 2rem 4rem;
+  }
+
+  .text-div h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    max-width: 35rem;
+  }
+
+  .text-div p {
+    font-size: 1.75rem;
+    max-width: 40rem;
+  }
+
+  .text-div a {
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+    letter-spacing: 3px;
+    transition: 1s;
+  }
+}
